@@ -7,6 +7,7 @@ void setup () {
 }
 
 void draw () {
+  background(200);
   l1.Dibujar();
   l2.Dibujar();
   float angulo = Angulo(l2, l1);
@@ -14,7 +15,11 @@ void draw () {
   textSize(20);
   text("Angulo " + degrees(angulo), 300, 200);
   circle(p.x, p.y, 5);
-  arc(p.x, p.y, 30, 30, QUARTER_PI, PI);
+  float theta_l1 = atan(l1.m);
+  float theta_l2 = atan(l2.m);
+  arc(p.x, p.y, 30, 30, theta_l1, theta_l1 + angulo);
+  arc(p.x, p.y, 50, 50, theta_l2, theta_l1);
+ // l2.m += 0.001;
 }
 
 float Angulo (Linea a, Linea b) {
