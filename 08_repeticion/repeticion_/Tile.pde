@@ -7,10 +7,10 @@ class Tile {
   color fc, fc1, fc2;
   float sw, sw1, sw2;
   
-  Tile () {
-    center = new PVector (0, 0);
+  Tile (float x, float y) {
+    center = new PVector (x, y);
     l = 50;
-    delta1 = random(4, 12);
+    delta1 = random(1, 10);
     l1 = l - 2 * delta1;
     
     delta2 = random(4, 12);
@@ -23,8 +23,8 @@ class Tile {
     fc1 = GetRandomColor();
     fc2 = GetRandomColor();
     sw = random (1, 3); 
-    sw1 = random (1, 3); 
-    sw2 = random (1, 3);
+    sw1 = random (1, 2); 
+    sw2 = random (1, 2);
     
   }
   
