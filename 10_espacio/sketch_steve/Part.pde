@@ -31,14 +31,14 @@ class Part {
   }
   
   void RotateX (float x) {
-    rot.add(x, 0, 0);
+    rot.set(x, 0, 0);
   }
   
   void RotateY (float y) {
-    rot.add(0, y, 0);
+    rot.set(0, y, 0);
   }
   
   void RotateZ (float z) {
-    rot.add(0, 0, z);
+    rot.set(0, 0, z);
   }
 }
