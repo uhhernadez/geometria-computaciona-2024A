@@ -13,7 +13,7 @@ void setup () {
   cubo.add(new PVector(-50, -50, -50));
   cubo.add(new PVector(-50, 50, -50));
 }
-
+float d = 100.0;
 void draw () {
   background(255);
   translate(width/2, height/2);
@@ -23,8 +23,12 @@ void draw () {
     //PVector rv = RotarX(v, -radians(0.1*millis()));
     //PVector rv = RotarY(v, -radians(0.1*millis()));
     PVector rv = RotarZ(v, -radians(0.1*millis()));
-    PVector pv = Ortonormal(rv);
+    //PVector pv = Ortonormal(rv);
+    rv.add(0,0,100);
+    PVector pv = Perspectiva(rv, d);
+    pv.div(pv.z);
     cubo2D.add(pv);  
+    //d += 0.1;
   }
    
   DibujarCubo2D(cubo2D);
@@ -45,6 +49,15 @@ PVector Ortonormal(PVector v) {
     {0, 0, 0},
   };
   return Mux3x3(orto, v);
+}
+
+PVector Perspectiva(PVector v, float d) {
+  float [][] perspectiva = {
+    {1, 0, 0},
+    {0, 1, 0},
+    {0, 0, 1/d},
+  };
+  return Mux3x3(perspectiva, v);
 }
 
 PVector RotarX (PVector v, float theta) {
