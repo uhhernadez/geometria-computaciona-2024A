@@ -11,8 +11,9 @@ class Steve {
 
   Steve (float x, float y, float z) {
     pos = new PVector(x, y, z);
-    pos = PVector.random3D().mult(20);
-    theta = radians(random(-90,90));
+    pos = PVector.random2
+    D().mult(50);
+    theta = radians(random(-180,180));
     
     leg_right = new Part(2.5, 0, 15, 0, 0, -7.5, 5, 5, 15);
     leg_lefth = new Part(-2.5, 0, 15, 0, 0, -7.5, 5, 5, 15);
