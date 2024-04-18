@@ -1,6 +1,6 @@
 # Blender v3.0.1 OBJ File: ''
 # www.blender.org
-mtllib rata_centrada.mtl
+mtllib centrada.mtl
 o rata
 v -0.173653 0.061038 -0.385705
 v -0.158257 0.031312 -0.286522
