@@ -11,7 +11,7 @@ class Curve {
     for (float t = min; t <= max; t += 0.01) {
       float x = fx(t);
       float y = fy(t);
-      points.add(new PVector(x,y));
+      points.add(new PVector(x, y, t));
     }
   }
  
@@ -24,14 +24,14 @@ class Curve {
   }
   
   float fx(float t) {
-    //return 50 * cos(t);
-    return 16 * sin (t) * sin (t) * sin (t);
+    return 10 * cos(t);
+    //return 16 * sin (t) * sin (t) * sin (t);
   }
   
   float fy(float t) {
-    //return 50 * sin(t);
-    return 13 * cos (t) - 5 * cos(2 * t) 
-          - 2 * cos(3 * t) - cos (4 * t);
+    return 10 * sin(t);
+    //return 13 * cos (t) - 5 * cos(2 * t) 
+    //      - 2 * cos(3 * t) - cos (4 * t);
   }
   
   void Rotation (float theta) {

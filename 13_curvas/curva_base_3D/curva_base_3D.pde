@@ -12,7 +12,7 @@ void draw () {
   PVector p = c.points.get(n);
   background(0);
   lights();
-  camera (p.x, p.y, 0,
+  camera (p.x, p.y, 10*p.z,
           0, 0, 0,
           0, 0, -1) ;
   perspective(radians(60),height/width,0.1, 1000);
