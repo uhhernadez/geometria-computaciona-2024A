@@ -2,10 +2,12 @@ class Curve {
   ArrayList<PVector> points;
   float mint;
   float maxt;
+  float radio;
   
-  Curve (float min, float max) {
+  Curve (float min, float max, float radio) {
     maxt = max;
     mint = min;
+    this.radio = radio;
     points = new ArrayList<PVector>();
     
     for (float t = min; t <= max; t += 0.01) {
@@ -24,14 +26,11 @@ class Curve {
   }
   
   float fx(float t) {
-    return 10 * cos(t);
-    //return 16 * sin (t) * sin (t) * sin (t);
+    return radio * cos(t);
   }
   
   float fy(float t) {
-    return 10 * sin(t);
-    //return 13 * cos (t) - 5 * cos(2 * t) 
-    //      - 2 * cos(3 * t) - cos (4 * t);
+    return radio * sin(t);
   }
   
   void Rotation (float theta) {
