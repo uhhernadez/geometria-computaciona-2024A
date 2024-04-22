@@ -31,7 +31,7 @@ class Curve {
   }
   
   float fy(float t) {
-    return radio * sin(t);
+    return 4*radio * sin(t);
   }
   
   void Rotation (float theta) {
