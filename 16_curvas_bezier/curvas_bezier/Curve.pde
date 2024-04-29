@@ -12,6 +12,7 @@ class Curve {
   }
   
   void Eval () {
+    points.clear();
     for (float t = mint; t <= maxt; t += 0.01) {
       float x = fx(t);
       float y = fy(t);
@@ -21,7 +22,7 @@ class Curve {
   }
  
   void Draw () {
-    //noFill();
+    noFill();
     beginShape();
       for (PVector p: points) {
         vertex(p.x, p.y);
