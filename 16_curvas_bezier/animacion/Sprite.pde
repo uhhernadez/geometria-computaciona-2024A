@@ -6,7 +6,7 @@ class Sprite {
   Sprite (String prefix, int N) {
     sprites = new ArrayList<PImage>();
     for (int i = 1; i <= N; i++) {
-      String fullname = prefix +"_"+ i;
+      String fullname = prefix +"_"+ i + ".png";
       println(fullname);
       sprites.add(loadImage(fullname));
     }

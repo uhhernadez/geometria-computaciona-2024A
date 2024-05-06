@@ -3,9 +3,12 @@ BezierQuadratic q;
 BezierCubic c;
 PVector picked;
 int node;
+Sprite walk;
+
 
 void setup () {
   size (500, 500);
+  walk = new Sprite("dog/Walk",10);
   b1 = new BezierFirst(-50,-50, 
                        100, 100);
   q = new BezierQuadratic(-50, -50,
@@ -25,9 +28,11 @@ void draw () {
   //b1.Draw();
   //q.Draw();
   //q.p1.rotate(radians(1));
-  c.Draw();
+  //c.Draw();
   //c.p2.rotate(radians(1));
   //c.p1.rotate(-radians(1));
+  
+  
   if(holding) {
     circle(picked.x, picked.y, 10);
   }
