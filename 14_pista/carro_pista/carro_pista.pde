@@ -6,8 +6,8 @@ int n = 0;
 boolean toggle = true;
 
 void setup () {
- // size (500, 500, P3D);
-  fullScreen(P3D);
+  size (500, 500, P3D);
+//  fullScreen(P3D);
   g = new Gizmo ();
   gokart = loadShape("GoKart1.obj");
   gokart.rotateX(radians(90));
