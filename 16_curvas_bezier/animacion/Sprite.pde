@@ -15,7 +15,15 @@ class Sprite {
   }
   
   void Draw () {
-    image(sprites.get(n),0,0);
-    n = ((n+1)==sprites.size())? 0: n+1;
+    pushMatrix();
+      scale(0.5);
+      image(sprites.get(n),0,0);
+    popMatrix();
+    
+    float t = millis() / 1000.0;
+    if ((t - tf)> 0.5) {
+      tf = t;
+      n = ((n+1)==sprites.size())? 0: n+1;
+    }
   }
 }

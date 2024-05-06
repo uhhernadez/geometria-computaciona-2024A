@@ -32,7 +32,7 @@ void draw () {
   //c.p2.rotate(radians(1));
   //c.p1.rotate(-radians(1));
   
-  
+  walk.Draw();
   if(holding) {
     circle(picked.x, picked.y, 10);
   }
