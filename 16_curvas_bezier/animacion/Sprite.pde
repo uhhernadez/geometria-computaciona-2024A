@@ -16,12 +16,14 @@ class Sprite {
   
   void Draw () {
     pushMatrix();
+      imageMode(CENTER);
       scale(0.5);
       image(sprites.get(n),0,0);
+      imageMode(CORNER);
     popMatrix();
     
     float t = millis() / 1000.0;
-    if ((t - tf)> 0.5) {
+    if ((t - tf)> 0.05) {
       tf = t;
       n = ((n+1)==sprites.size())? 0: n+1;
     }
