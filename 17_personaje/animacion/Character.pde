@@ -7,16 +7,38 @@ class Character {
   Sprite hurt;
   Sprite jump;
   Sprite slide;
-
+  boolean isWalking;
+  boolean isAlive;
+  PVector position;
   Character (String animal) {
-      walk = new Sprite("dog/Walk", 10);
-      run = new Sprite("dog/Run", 8);
-      idle = new Sprite("dog/Idle", 10);
-      dead = new Sprite("dog/Dead", 10);
-      fall = new Sprite("dog/Fall", 8);
-  hurt = new Sprite("dog/Hurt", 10);
-  jump = new Sprite("dog/Jump",8);
-  slide = new Sprite("dog/Slide", 10);
+    walk = new Sprite(animal + "/Walk", 10);
+    run = new Sprite(animal + "/Run", 8);
+    idle = new Sprite(animal + "/Idle", 10);
+    dead = new Sprite(animal + "/Dead", 10);
+    fall = new Sprite(animal + "/Fall", 8);
+    hurt = new Sprite(animal + "/Hurt", 10);
+    jump = new Sprite(animal + "/Jump", 8);
+    slide = new Sprite(animal + "/Slide", 10);
+    isWalking = false;
+    isAlive = true;
+    walk.Loop();
+    idle.Loop();
+    position = new PVector();
   }
-
+  void Draw () {
+    if (!isAlive) return;
+    
+    pushMatrix();
+      translate(position.x, position.y);
+      if (isWalking) {
+        walk.Draw();
+      } else {
+        idle.Draw();
+      }
+    popMatrix();
+  }
+  void Kill () {
+    isAlive = false;
+  }
+  
 }
