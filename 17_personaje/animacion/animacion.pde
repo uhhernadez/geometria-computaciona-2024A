@@ -3,25 +3,10 @@ BezierQuadratic q;
 BezierCubic c;
 PVector picked;
 int node;
-Sprite walk;
-Sprite run;
-Sprite idle;
-Sprite dead;
-Sprite fall;
-Sprite hurt;
-Sprite jump;
-Sprite slide;
 
 void setup () {
   size (500, 500);
-  walk = new Sprite("dog/Walk", 10);
-  run = new Sprite("dog/Run", 8);
-  idle = new Sprite("dog/Idle", 10);
-  dead = new Sprite("dog/Dead", 10);
-  fall = new Sprite("dog/Fall", 8);
-  hurt = new Sprite("dog/Hurt", 10);
-  jump = new Sprite("dog/Jump",8);
-  slide = new Sprite("dog/Slide", 10);
+
   b1 = new BezierFirst(-50,-50, 
                        100, 100);
   q = new BezierQuadratic(-50, -50,

@@ -53,7 +53,7 @@ class Sprite {
   }
   
   void Pause () {
-  
+    isPause = !isPause;
   }
   
   void Stop () {
