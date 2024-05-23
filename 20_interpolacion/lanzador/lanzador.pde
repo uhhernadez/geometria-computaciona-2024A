@@ -1,13 +1,12 @@
-PShape caparazon;
 Gizmo gizmo;
 Grid grid;
+Item caparazon;
 
 void setup () {
   size(500,500, P3D);
   gizmo = new Gizmo ();
   grid = new Grid();
-  caparazon = loadShape("Caparazon.obj");
-  caparazon.rotateX(radians(90));
+  caparazon = new Item(0, 0, 0, 20, 4);
 }
 
 void draw () {
@@ -17,8 +16,5 @@ void draw () {
           0, 0,-1);
   gizmo.Draw();
   grid.Draw();
-  beginShape();
-    rotateZ(radians(5*millis()/10.0));
-    shape(caparazon);
-  endShape();
+  caparazon.Draw();
 }
