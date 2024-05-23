@@ -6,14 +6,13 @@ class Item {
   PVector pf;
   boolean isEnd;
   
-  Item (float xi,float yi, float xf, float yf, float duration) {
+  Item (float xi,float yi, float xf, float yf, float duration, PShape p) {
     pi = new PVector(xi, yi);
     pf = new PVector(xf, yf);
     ti = millis ()/1000.0;
     isEnd = false;
     T = duration;
-    caparazon = loadShape("Caparazon.obj");
-    caparazon.rotateX(radians(90));
+    caparazon = p;
   }
   
   void Draw () {
@@ -22,13 +21,13 @@ class Item {
    if (t <= 1.0) {
      float x = lerp (pi.x, pf.x, t);
      float y = lerp (pi.y, pf.y, t);
-     beginShape();
+     pushMatrix();
      translate(x,y);  
-       beginShape();
+       pushMatrix();
         rotateZ(radians(5*millis()/10.0));
         shape(caparazon);
-       endShape();
-     endShape();
+       popMatrix();
+     popMatrix();
    }  else {
      isEnd = true;
    }
